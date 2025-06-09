@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Authentification - Cosmetic{% endblock %}
+
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-box">
+        <h1>Bienvenue sur <span class="highlight">Cosmetic</span></h1>
+        <p class="subtitle">Veuillez choisir une option pour continuer</p>
+        
+        <div class="auth-buttons">
+            <a href="index.php?page=inscrire" class="btn-auth primary">S'inscrire</a>
+            <a href="index.php?page=connexion" class="btn-auth secondary">Se connecter</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ parent() }} Contact{% endblock %}
+
+{% block styles %}
+<style>
+  h1 {
+    color: #b3477d;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 0.5em;
+  }
+  h2 {
+    color: #944d99;
+    border-bottom: 2px solid #d9a6c9;
+    padding-bottom: 0.2em;
+    margin-top: 1.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  section {
+    background-color: #fdf4fb;
+    border: 1px solid #e3c4d7;
+    border-radius: 8px;
+    padding: 1em 1.5em;
+    margin-bottom: 1em;
+    max-width: 500px;
+  }
+  address {
+    font-style: normal;
+    line-height: 1.5;
+    color: #5a3750;
+  }
+  a {
+    color: #b3477d;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  ul {
+    padding-left: 1.2em;
+    color: #6e3d60;
+  }
+  ul li {
+    margin-bottom: 0.4em;
+  }
+  p {
+    color: #4b2e42;
+    line-height: 1.4;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Contactez-nous</h1>
+<p>Pour toute question ou information, vous pouvez nous joindre par les moyens suivants :</p>
+
+<section>
+  <h2>Adresse</h2>
+  <address>
+    123 Rue de l’Exemple<br>
+    75000 Paris<br>
+    France
+  </address>
+</section>
+
+<section>
+  <h2>Téléphone</h2>
+  <p><a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
+</section>
+
+<section>
+  <h2>Email</h2>
+  <p><a href="mailto:contact@example.com">contact@example.com</a></p>
+</section>
+
+<section>
+  <h2>Horaires d’ouverture</h2>
+  <ul>
+    <li>Lundi - Vendredi : 9h00 - 18h00</li>
+    <li>Samedi : 10h00 - 14h00</li>
+    <li>Dimanche : Fermé</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Réseaux sociaux</h2>
+  <ul>
+    <li><a href="https://facebook.com/exemple" target="_blank" rel="noopener">Facebook</a></li>
+    <li><a href="https://twitter.com/exemple" target="_blank" rel="noopener">Twitter</a></li>
+    <li><a href="https://instagram.com/exemple" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+</section>
+{% endblock %}

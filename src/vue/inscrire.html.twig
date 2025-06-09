@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Inscription - Cosmetic{% endblock %}
+
+
+{% block content %}
+
+<form action="index.php?page=inscrire" method="post" enctype="application/x-www-form-urlencoded" class="form-container">
+    <h1 class="form-title">Inscrivez-vous</h1>
+
+    <div class="form-group">
+        <label for="inputEmail">Email</label>
+        <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Votre Email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" class="form-control" placeholder="Votre prénom" required>
+    </div>
+
+    <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" class="form-control" placeholder="Votre nom" required>
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword">Mot de passe</label>
+        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Mot de passe" required>
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword2">Confirmez le mot de passe</label>
+        <input type="password" id="inputPassword2" name="inputPassword2" class="form-control" placeholder="Confirmation mot de passe" required>
+    </div>
+
+
+
+    <button class="btn btn-primary btn-block" type="submit" name="btInscrire">S'inscrire</button>
+
+    </button>
+
+    {% if form.valide is defined %}
+        {% if form.valide == false %}
+            <div class="alert alert-danger" style="margin-top: 20px;">
+                {{ form.message }}
+            </div>
+        {% elseif form.valide == true %}
+            <div class="alert alert-success" style="margin-top: 20px;">
+                Inscription réussie ! Bienvenue {{ form.email }}.
+            </div>
+        {% endif %}
+    {% endif %}
+</form>
+
+{% endblock %}

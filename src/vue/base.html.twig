@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Titre par défaut{% endblock %}</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/png" href="/cosmetic/favicon.png?v=2" />
+</head>
+<body>
+    <div class="promo-banner">
+        <p>Livraison gratuite dès 50€ d'achat | -20% sur votre première commande avec le code BIENVENUE</p>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-content">
+                <a href="index.php?page=accueil" class="logo">COSMETIC</a>
+
+                <ul class="nav-links">
+                    <li><a href="index.php?page=accueil#collections">Collections</a></li>
+                    <li><a href="index.php?page=soins">Soins</a></li>
+                    <li><a href="index.php?page=maquillage">Maquillage</a></li>
+                    <li><a href="index.php?page=parfums">Parfums</a></li>
+                </ul>
+
+                <div class="nav-search-icons">
+                    <form action="index.php" method="get" class="search-form">
+                        <input type="hidden" name="page" value="recherche" />
+                        <input type="text" name="q" placeholder="Rechercher un produit..." class="search-input" />
+                        <button type="submit">Rechercher</button>
+                    </form>
+
+                    <div class="nav-icons">
+                        <a href="index.php?page=authentification" class="icon">👤</a>
+                        <a href="index.php?page=panier" class="icon">🛍️</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Service Client</h4>
+                <ul>
+                    <li><a href="index.php?page=contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form" action="index.php?page=newsletter" method="post">
+                    <input type="email" name="email" placeholder="Votre email" required />
+                    <button type="submit">S'inscrire</button>
+                </form>
+                {% if message is defined and message %}
+                    <p class="newsletter-message">{{ message }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

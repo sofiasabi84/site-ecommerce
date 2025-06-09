@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Parfums - Cosmetic{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/styles.css">
+{% endblock %}
+
+{% block content %}
+
+    <!-- Bannière parfums -->
+    <section class="banniere-parfum">
+        <div class="overlay">
+            <h1>Parfums</h1>
+            <p>
+                Laissez-vous transporter par des senteurs envoûtantes. Nos parfums allient élégance et intensité
+                pour refléter votre personnalité avec raffinement. Trouvez la fragrance parfaite pour chaque instant.
+            </p>
+        </div>
+    </section>
+
+
+
+    <div class="produits">
+      {% for produit in parfums %}
+        <div class="produit">
+          <a href="index.php?page=produit&id={{ produit.id }}">
+            <img src="{{ produit.URLimage }}" alt="{{ produit.nom }}">
+            <h3>{{ produit.nom }}</h3>
+            <p>{{ produit.prix }} €</p>
+          </a>
+          <a href="index.php?page=ajouterPanier&id={{ produit.id }}" class="btn">Ajouter au panier</a>
+        </div>
+      {% else %}
+        <p>Aucun parfum disponible.</p>
+      {% endfor %}
+    </div>
+
+{% endblock %}

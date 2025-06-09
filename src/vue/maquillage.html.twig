@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Maquillage - Cosmetic{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/styles.css">
+{% endblock %}
+
+{% block content %}
+
+    <!-- Bannière maquillage -->
+    <section class="banniere-maquillage">
+        <div class="overlay">
+            <h1>Maquillage</h1>
+            <p>
+                Essentiel beauté incontournable, le maquillage est notre meilleur allié !
+                Teint frais, lèvres gourmandes et smoky eyes, le makeup parfait est à portée de main.
+                Découvrez notre sélection pour sublimer votre visage à chaque instant.
+            </p>
+        </div>
+    </section>
+
+
+
+    {% for categorie, produits in produits_par_categorie %}
+        <h2>{{ categorie }}</h2>
+
+        {% if produits|length > 0 %}
+            <div class="categorie-block">
+                {% for produit in produits %}
+                    <div class="produit">
+                        <a href="index.php?page=produit&id={{ produit.id }}">
+                            <img src="{{ produit.URLimage }}" alt="{{ produit.nom }}">
+                            <h3>{{ produit.nom }}</h3>
+                            <p>{{ produit.prix }} €</p>
+                        </a>
+                        <a href="index.php?page=ajouterPanier&id={{ produit.id }}" class="btn">Ajouter au panier</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Aucun produit pour cette catégorie.</p>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}

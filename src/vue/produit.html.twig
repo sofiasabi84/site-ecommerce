@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<h1 style="text-align:center;">{{ produit.nom }}</h1>
+
+<div class="produit-detail-container">
+
+  <div>
+    <img src="{{ produit.URLimage }}" alt="{{ produit.nom }}">
+  </div>
+
+  <div class="produit-info">
+    <h3>Avis :</h3>
+    <div class="etoiles">
+      &#9733; &#9733; &#9733; &#9733; &#9733;
+    </div>
+
+    <p><strong>Prix :</strong> {{ produit.prix }} €</p>
+
+    <p><strong>Description :</strong><br>{{ produit.description|nl2br }}</p>
+
+    <a href="index.php?page=ajouterPanier&id={{ produit.id }}" class="btn-ajout-panier">
+      Ajouter au panier
+    </a>
+  </div>
+
+</div>
+{% endblock %}

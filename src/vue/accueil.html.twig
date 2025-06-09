@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Cosmetic - Accueil
+{% endblock %}
+
+{% block content %}
+    <header class="hero">
+    
+        <div class="hero-content">
+            <h1>Découvrez la Beauté Naturelle</h1>
+            <p>Des cosmétiques de luxe pour sublimer votre beauté</p>
+            <a href="index.php?page=accueil#collections" class="cta-button">Découvrir</a>
+        </div>
+    </header>
+
+    <section id="collections" class="categories">
+        <h2>Nos Collections</h2>
+        <div class="category-grid">
+    <div class="category-card">
+        <a href="index.php?page=soins" style="text-decoration: none; color: inherit;">
+            <img src="https://media.istockphoto.com/id/1382483416/fr/photo/portrait-en-studio-dune-jolie-jeune-femme-appliquant-une-cr%C3%A8me-hydratante-sur-son-visage-sur.webp?s=2048x2048&w=is&k=20&c=XxyEgqBEwu9Nq_c5J-YmChu0pv1z4Fyybehdgb_bWUU=" alt="Soins visage" style="width: 100%; height: auto; border-radius: 8px;">
+            <h3 style="text-align: center; margin-top: 10px;">Soins du visage</h3>
+        </a>
+    </div>
+
+    <div class="category-card">
+        <a href="index.php?page=maquillage" style="text-decoration: none; color: inherit;">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348" alt="Maquillage">
+            <h3>Maquillage</h3>
+        </a>
+    </div>
+
+    <div class="category-card">
+        <a href="index.php?page=parfums" style="text-decoration: none; color: inherit;">
+            <img src="https://media.istockphoto.com/id/2176630591/fr/photo/femme-%C3%A9l%C3%A9gante-en-chemisier-pulv%C3%A9risant-une-bouteille-de-parfum-pr%C3%A9f%C3%A9r%C3%A9-de-pr%C3%A8s-%C3%A0-la-maison.webp?s=2048x2048&w=is&k=20&c=PkOcrnZMwKeYlwrrTIVEURHJWEcCeVtneSYVKVLuq4g=" alt="Parfums">
+            <h3>Parfums</h3>
+        </a>
+    </div>
+</div>
+
+    </section>
+
+ 
+
+{% endblock %}

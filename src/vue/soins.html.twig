@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Soins - Cosmetic{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/styles.css">
+{% endblock %}
+
+{% block content %}
+
+    <!-- Bannière style Sephora -->
+    <section class="banniere-soins">
+        <div class="overlay">
+            <h1>Soin Visage</h1>
+            <p>
+                Un teint frais et healthy commence avec une peau en bonne santé.
+                Cosmetic propose des soins visage adaptés à tous les types de peaux.
+                Peau sensible, grasse, mixte ou sèche, faites votre choix parmi les soins,
+                démaquillants, ou sérums qui redonneront de l’éclat à votre peau.
+            </p>
+        </div>
+    </section>
+
+
+
+    {% for categorie, produits in produits_par_categorie %}
+        <h2>{{ categorie }}</h2>
+
+        {% if produits|length > 0 %}
+            <div class="categorie-block">
+                {% for produit in produits %}
+                    <div class="produit">
+                        <a href="index.php?page=produit&id={{ produit.id }}">
+                            <img src="{{ produit.URLimage }}" alt="{{ produit.nom }}">
+                            <h3>{{ produit.nom }}</h3>
+                            <p>{{ produit.prix }} €</p>
+                        </a>
+                        <a href="index.php?page=ajouterPanier&id={{ produit.id }}" class="btn">Ajouter au panier</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Aucun produit pour cette catégorie.</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

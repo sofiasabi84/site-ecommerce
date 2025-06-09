@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Résultats de recherche{% endblock %}
+
+{% block content %}
+    <h2>Résultats de recherche pour "{{ motCle }}"</h2>
+
+    {% if resultats is empty %}
+        <p>Aucun produit trouvé.</p>
+    {% else %}
+        <div class="produits-grid">
+            {% for produit in resultats %}
+                <div class="produit">
+                    <a href="index.php?page=produit&id={{ produit.id }}">
+                        <img src="{{ produit.URLimage }}" alt="{{ produit.nom }}">
+                        <h3>{{ produit.nom }}</h3>
+                        <p>
+                            {{ produit.description|length > 100 
+                                ? produit.description|slice(0, 100) ~ '...' 
+                                : produit.description }}
+                        </p>
+                        <p><strong>{{ produit.prix }} €</strong></p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
